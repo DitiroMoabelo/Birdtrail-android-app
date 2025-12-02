@@ -1,0 +1,168 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".AddSightings"
+    android:background="@drawable/bgss">
+
+
+    <ImageView
+        android:id="@+id/appIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="74dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/logo" />
+
+    <TextView
+        android:id="@+id/addBirdObservationTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ADD SIGHTINGS"
+        android:textColor="@color/white"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/appIcon"
+        android:layout_marginTop="10dp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/addBirdObservationTextView"
+        android:layout_marginTop="-13dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="Upload Bird Image"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+            <!-- CardView for Bird Name -->
+
+            <ImageView
+                android:id="@+id/uploadImage"
+                android:layout_width="281dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:contentDescription="Upload Image Icon"
+                android:scaleType="centerInside"
+                android:src="@drawable/baseline_add_a_photo_24" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:elevation="4dp"
+                app:cardCornerRadius="10dp">
+
+                <EditText
+                    android:id="@+id/uploadBirdName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edit_text_background"
+                    android:hint="Name of Bird"
+                    android:padding="15dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/grey"
+                    android:textSize="18sp" /> <!-- New background added -->
+            </androidx.cardview.widget.CardView>
+
+            <!-- CardView for Bird Location -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:elevation="4dp"
+                app:cardCornerRadius="10dp">
+
+                <EditText
+                    android:id="@+id/uploadBirdLocation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edit_text_background"
+                    android:hint="Bird Location"
+                    android:padding="15dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/grey"
+                    android:textSize="18sp" /> <!-- New background added -->
+            </androidx.cardview.widget.CardView>
+
+            <!-- CardView for Bird Description -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:elevation="4dp"
+                app:cardCornerRadius="10dp">
+
+                <EditText
+                    android:id="@+id/uploadBirdDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edit_text_background"
+                    android:hint="Bird Description"
+                    android:minLines="3"
+                    android:padding="15dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/grey"
+                    android:textSize="18sp" /> <!-- New background added -->
+            </androidx.cardview.widget.CardView>
+
+            <!-- Buttons -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/saveButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    android:backgroundTint="@color/green"
+                    android:padding="10dp"
+                    android:text="SAVE"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+
+                <Button
+                    android:id="@+id/clearButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/green"
+                    android:padding="10dp"
+                    android:text="CLEAR"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+
+        android:elevation="6dp"
+        app:itemIconSize="28dp"
+        app:labelVisibilityMode="labeled"
+        app:itemIconTint="@color/grey"
+        app:itemTextColor="@color/grey"
+        app:menu="@menu/bottom_navigation" />
+</RelativeLayout>
